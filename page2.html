@@ -1,0 +1,13 @@
+<body>
+<script type="text/javascript">
+	document.write(
+		"<h1>" + localStorage.getItem('lastMsg1') + "</h1>"
+	)
+	var currentContent = localStorage.getItem('lastMsg1')
+
+	console.log(localStorage.getItem('lastMsg1'), currentContent)
+	if (localStorage.getItem('lastMsg1') != currentContent) {
+		  window.location.reload()
+	}
+</script>
+</body>
