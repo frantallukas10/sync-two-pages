@@ -1,13 +1,12 @@
 <body>
-<script type="text/javascript">
-	document.write(
-		"<h1>" + localStorage.getItem('lastMsg1') + "</h1>"
-	)
-	var currentContent = localStorage.getItem('lastMsg1')
-
-	console.log(localStorage.getItem('lastMsg1'), currentContent)
-	if (localStorage.getItem('lastMsg1') != currentContent) {
-		  window.location.reload()
-	}
-</script>
+	<h1 id='h1'></h1>
+	<script type="text/javascript">
+		const currentValueText = document.getElementById('h1').text
+		setInterval(() => { 
+			const newValueText = localStorage.getItem('lastMsg1')
+			if(currentValueText !== newValueText) {
+				document.getElementById('h1').innerHTML = newValueText
+			}
+		}, 1000) 
+	</script>
 </body>

@@ -2,13 +2,9 @@
 <input type="submit" id="send" value="Send">
 
 <script>
-document.getElementById('send').addEventListener('click', function(e){    
-  localStorage.setItem('reload', true)
-  localStorage.setItem(
-  	'lastMsg1', document.getElementById('msg1').value
-  )  
-})
-// var event = new Event('itemInserted');
-// document.dispatchEvent(event);
-// Add stuff to localStorage
+	document.getElementById('send').addEventListener('click', function(e) {
+		localStorage.setItem(
+			'lastMsg1', document.getElementById('msg1').value
+			)  
+	})
 </script>
