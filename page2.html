@@ -1,12 +1,144 @@
-<body>
-	<h1 id='h1'></h1>
-	<script type="text/javascript">
-		const currentValueText = document.getElementById('h1').text
-		setInterval(() => { 
-			const newValueText = localStorage.getItem('lastMsg1')
-			if(currentValueText !== newValueText) {
-				document.getElementById('h1').innerHTML = newValueText
+<!doctype html>
+<html lang="sk">
+	<head>
+		<meta charset="utf-8">
+		<title>Olymp</title>
+		<meta name="author" content="frantal.lukas10@gmail.com">
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<style>
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
 			}
-		}, 1000) 
-	</script>
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure, 
+			footer, header, hgroup, menu, nav, section {
+				display: block;
+			}
+			body {
+				line-height: 1;
+			}
+			ol, ul {
+				list-style: none;
+			}
+			blockquote, q {
+				quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+			table {
+				table-layout: fixed;
+				border-collapse: collapse;
+				border-spacing: 0;
+				width: 100%;
+			}
+			html, body, table {
+				height: 100%;
+			}
+			.holder-table th {
+				text-align: center;
+				vertical-align: middle;
+				font-family: Arial, open-sans;
+				font-weight: bold;
+				color: #FFF;
+				font-size: 3vw;
+				padding: 1vw;
+			}
+			.holder-table td {
+				padding-left: 10px;
+			}
+			.holder-table td:first-child {
+				padding-left: 0;
+			}	
+			.holder-table td:last-child {
+				max-width: 100px;
+			}
+			body {
+				background-color: #21b11c;
+				padding: 0 2vw;
+			}
+			input {
+				width: 100%;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+	<h1 id='h1'></h1>
+	<table class='holder-table'>
+		<thead>
+			<tr>
+				<!-- <th>Platnosť</th> -->
+				<th>Mena</th>
+				<th>Valuta-Nákup</th>
+				<th>Valuta-Predaj</th>
+				<th>Valuta-Stred</th>
+				<th>Kurz NBS</th>
+			</tr>
+		</thead>
+		<tbody id=tbody>
+			<script type="text/javascript">
+
+				const createElementTr = document.createElement("tr")
+
+				// for (let i=0; i <= localStorage.length; i++)  {
+			   // console.log(localStorage.getItem(localStorage.getItem(i).split(',')))
+			 //   localStorage.getItem(Number(i))
+				// }
+				// createTd.appendChild(node)
+    //     document.getElementById('h1').innerHTML = newValueText 
+
+				const element = document.getElementById("tbody")
+				// element.appndChild(createTr.appndChild(createTd.innerHTML = 'j'))
+
+
+				let currentValueText = []
+				let newValueText = []
+				currentValueText[0] = "*,*,*,*,*"
+
+				setInterval(() => { 
+					let string = localStorage.getItem(0)
+					 if (string !== null) {
+						if (localStorage.length > 0) {
+							for (let i = 0; i < localStorage.length; i++) {
+						   newValueText[i] = localStorage.getItem(Number(i))
+						   if(currentValueText[i] !== newValueText[i]) {
+							   	currentValueText[i] = localStorage.getItem(Number(i))
+							   	console.log(currentValueText[i])
+							   	const split = currentValueText[i].split(',')
+							   	console.log(split.length)
+							   	for (let i = 0; i < split.length; i++) {
+							   		const createElementTd = document.createElement("td")
+							   		console.log(createElementTd.appendChild(document.createTextNode(split[i])))
+							   		const tdElements = [createElementTd.appendChild(document.createTextNode(split[i]))]
+							   	}
+						 		}
+							}
+						}
+					}
+				}, 1000) 
+			</script>
+		</tbody>
+	</table>
 </body>
+</html>
