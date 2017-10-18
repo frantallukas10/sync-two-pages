@@ -2,7 +2,7 @@
 <html lang="sk">
 	<head>
 		<meta charset="utf-8">
-		<title>Olymp</title>
+		<title>b</title>
 		<meta name="author" content="frantal.lukas10@gmail.com">
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -89,52 +89,41 @@
 		<thead>
 			<tr>
 				<!-- <th>Platnosť</th> -->
-				<th>Mena</th>
-				<th>Valuta-Nákup</th>
-				<th>Valuta-Predaj</th>
-				<th>Valuta-Stred</th>
-				<th>Kurz NBS</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
 			</tr>
 		</thead>
 		<tbody id=tbody>
 			<script type="text/javascript">
-
-				const createElementTr = document.createElement("tr")
-
-				// for (let i=0; i <= localStorage.length; i++)  {
-			   // console.log(localStorage.getItem(localStorage.getItem(i).split(',')))
-			 //   localStorage.getItem(Number(i))
-				// }
-				// createTd.appendChild(node)
-    //     document.getElementById('h1').innerHTML = newValueText 
-
-				const element = document.getElementById("tbody")
-				// element.appndChild(createTr.appndChild(createTd.innerHTML = 'j'))
-
+				const tbodyElement = document.getElementById("tbody")
 
 				let currentValueText = []
 				let newValueText = []
 				currentValueText[0] = "*,*,*,*,*"
 
-				setInterval(() => { 
+				setInterval(() => {
 					let string = localStorage.getItem(0)
-					 if (string !== null) {
-						if (localStorage.length > 0) {
-							for (let i = 0; i < localStorage.length; i++) {
-						   newValueText[i] = localStorage.getItem(Number(i))
-						   if(currentValueText[i] !== newValueText[i]) {
-							   	currentValueText[i] = localStorage.getItem(Number(i))
-							   	console.log(currentValueText[i])
-							   	const split = currentValueText[i].split(',')
-							   	console.log(split.length)
-							   	for (let i = 0; i < split.length; i++) {
-							   		const createElementTd = document.createElement("td")
-							   		console.log(createElementTd.appendChild(document.createTextNode(split[i])))
-							   		const tdElements = [createElementTd.appendChild(document.createTextNode(split[i]))]
-							   	}
-						 		}
-							}
+					if (string === null) {
+					 	return
+					}
+					if (localStorage.length <= 0) {
+						return	
+					}
+					for (let i = 0; i < localStorage.length; i++) {
+				   	newValueText[i] = localStorage.getItem(Number(i))
+				   	if(currentValueText[i] === newValueText[i]) {
+					   	return
 						}
+						currentValueText[i] = localStorage.getItem(Number(i))
+				   	const split = currentValueText[i].split(',')
+				   	console.log(split)
+				   	const createTrElement = 
+						split.forEach(function(item) {
+						  '<td>' + item + '</td>'
+						})
 					}
 				}, 1000) 
 			</script>
