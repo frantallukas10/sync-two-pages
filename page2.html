@@ -97,43 +97,42 @@
 			</tr>
 		</thead>
 		<tbody id=tbody>
-			<script type="text/javascript">
-				const selectELementTbody = document.getElementById("tbody")
-
-				let currentValueText = [] 
-        let newValueText = []
- 
-			  setInterval(() => { 
-          let string = localStorage.getItem(0) 
-         	if (string !== null) { 
-            if (localStorage.length > 0) {
-              for(let i = 0; i < localStorage.length; i++) {
-
-								newValueText[i] = localStorage.getItem(Number(i)) 
-
-								if(currentValueText[i] !== newValueText[i]) {
-
-									const createElementTr = document.createElement("tr")
-									const setAttributeIdTr = createElementTr.setAttribute("id", i)
-									selectELementTbody.appendChild(createElementTr)
-									currentValueText[i] = localStorage.getItem(Number(i))
-									const split = currentValueText[i].split(',')
-									const arrayElement = []
-
-									for(let j = 0; j < split.length; j++) {
-										const createElementTd = document.createElement("td")
-										const add 
-										arrayElement.push(inerHTML'<td id=' + i + '-' + j + '>' + split[j] + '</td>')
-
-									}
-									  console.log(arrayElement)
-                }
-              }
-            }
-          }
-				}, 1000) 
-			</script>
 		</tbody>
 	</table>
+	<script type="text/javascript">
+		const selectELementTbody = document.getElementById("tbody")
+
+		let currentValueText = [] 
+    let newValueText = []
+
+	  setInterval(() => { 
+      let string = localStorage.getItem(0) 
+     	if (string !== null) { 
+        if (localStorage.length > 0) {
+          for(let i = 0; i < localStorage.length; i++) {
+
+						newValueText[i] = localStorage.getItem(Number(i)) 
+
+						if(currentValueText[i] !== newValueText[i]) {
+
+							const createElementTr = document.createElement("tr")
+							const setAttributeIdTr = createElementTr.setAttribute("id", i)
+							selectELementTbody.appendChild(createElementTr)
+							currentValueText[i] = localStorage.getItem(Number(i))
+							const split = currentValueText[i].split(',')
+							const arrayElement = []
+							console.log(split)
+							const split = ["a", "a", "a", "a", "a"]
+							for(let j = 0; j < split.length; j++) {
+								// const createElementTd = document.createElement("td")
+								document.getElementById(i).inerHTML += '<td id=' + i + '-' + j + '>' + split[j] + '</td>'
+							}
+							console.log(arrayElement)
+            }
+          }
+        }
+      }
+		}, 1000) 
+	</script>
 </body>
 </html>
