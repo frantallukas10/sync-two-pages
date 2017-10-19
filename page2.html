@@ -47,34 +47,39 @@
 				content: none;
 			}
 			table {
-				table-layout: fixed;
 				border-collapse: collapse;
 				border-spacing: 0;
 				width: 100%;
 			}
-			html, body, table {
+			html, body {
 				height: 100%;
 			}
-			.holder-table th {
+			tr td:nth-child(2),
+			tr td:nth-child(3) {
+				text-transform: uppercase;
+			}
+			th {
 				text-align: center;
 				vertical-align: middle;
-				font-family: Arial, open-sans;
 				font-weight: bold;
-				color: #FFF;
-				font-size: 3vw;
-				padding: 1vw;
+				font-size: 5vw;
+				padding: 2vw 0;
 			}
-			.holder-table td {
+			td {
+				text-align: center;
 				padding-left: 10px;
+				font-size: 4vw;
 			}
-			.holder-table td:first-child {
+			td:first-child {
 				padding-left: 0;
 			}	
-			.holder-table td:last-child {
+			td:last-child {
 				max-width: 100px;
 			}
 			body {
-				background-color: #21b11c;
+				font-family: Arial;
+				background-color: #0c1769;
+				color: #FFF;
 				padding: 0 2vw;
 			}
 			input {
@@ -84,16 +89,15 @@
 		</style>
 	</head>
 	<body>
-	<h1 id='h1'></h1>
-	<table class='holder-table'>
+	<table>
 		<thead>
 			<tr>
 				<!-- <th>Platnosť</th> -->
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-				<th>5</th>
+				<th></th>
+				<th>Country</th>
+				<th>Currency</th>
+				<th>We sell</th>
+				<th>We buy</th>
 			</tr>
 		</thead>
 		<tbody id=tbody>
@@ -120,14 +124,13 @@
 							selectELementTbody.appendChild(createElementTr)
 							currentValueText[i] = localStorage.getItem(Number(i))
 							const split = currentValueText[i].split(',')
-							const arrayElement = []
-							console.log(split)
-							const split = ["a", "a", "a", "a", "a"]
+
 							for(let j = 0; j < split.length; j++) {
-								// const createElementTd = document.createElement("td")
-								document.getElementById(i).inerHTML += '<td id=' + i + '-' + j + '>' + split[j] + '</td>'
+								const createElementTd = document.createElement("td")
+								setAttributeIdTd = createElementTd.setAttribute("id", i + '-' + j)
+								textnode = document.createTextNode(split[j])
+								document.getElementById(i).appendChild(createElementTd).appendChild(textnode)
 							}
-							console.log(arrayElement)
             }
           }
         }
