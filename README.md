@@ -1,11 +1,11 @@
-if you dont want trun off 
+# synchronization between two pages from localstorage
 
-you can use this package https://www.npmjs.com/package/http-server
-install package
-npm install http-server -g .
-run http-server
-http-server .
+first you need trun off prevent third-party websites from saving and reading cookie data or you can use this package</br> https://www.npmjs.com/package/http-server</br>
+install package</br>
+npm install http-server -g .</br>
+run http-server</br>
+http-server .</br>
 
-open this url in browsers
-http://localhost:8080/page2.html.
-http://localhost:8080/page1.html.
+open this url in browsers</br>
+http://localhost:8080/page2.html.</br>
+http://localhost:8080/page1.html.</br>
