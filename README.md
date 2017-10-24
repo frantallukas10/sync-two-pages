@@ -3,14 +3,13 @@
 first you need trun off prevent third-party websites from saving and reading cookie data or you can use this package</br> https://www.npmjs.com/package/http-server</br>
 install package</br>
 
-## Installation
+## Installation:
 ```
 npm install http-server -g
 ```
 
-## Installation
+## Usage:
 ```
-run http-server
 http-server .
 ```
 
