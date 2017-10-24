@@ -5,11 +5,14 @@ install package</br>
 
 ## Installation
 ```
-npm install http-server -g .</br>
+npm install http-server -g
 ```
 
-run http-server</br>
-http-server .</br>
+## Installation
+```
+run http-server
+http-server .
+```
 
 open this url in browsers</br>
 http://localhost:8080/page2.html.</br>
