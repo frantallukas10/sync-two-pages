@@ -1,141 +1,185 @@
 <!doctype html>
 <html lang="sk">
-	<head>
-		<meta charset="utf-8">
-		<title>b</title>
-		<meta name="author" content="frantal.lukas10@gmail.com">
-		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<style>
-			html, body, div, span, applet, object, iframe,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-			a, abbr, acronym, address, big, cite, code,
-			del, dfn, em, img, ins, kbd, q, s, samp,
-			small, strike, strong, sub, sup, tt, var,
-			b, u, i, center,
-			dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend,
-			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed, 
-			figure, figcaption, footer, header, hgroup, 
-			menu, nav, output, ruby, section, summary,
-			time, mark, audio, video {
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-size: 100%;
-				font: inherit;
-				vertical-align: baseline;
-			}
-			/* HTML5 display-role reset for older browsers */
-			article, aside, details, figcaption, figure, 
-			footer, header, hgroup, menu, nav, section {
-				display: block;
-			}
-			body {
-				line-height: 1;
-			}
-			ol, ul {
-				list-style: none;
-			}
-			blockquote, q {
-				quotes: none;
-			}
-			blockquote:before, blockquote:after,
-			q:before, q:after {
-				content: '';
-				content: none;
-			}
-			table {
-				border-collapse: collapse;
-				border-spacing: 0;
-				width: 100%;
-			}
-			html, body {
-				height: 100%;
-			}
-			tr td:nth-child(2),
-			tr td:nth-child(3) {
-				text-transform: uppercase;
-			}
-			th {
-				text-align: center;
-				vertical-align: middle;
-				font-weight: bold;
-				font-size: 5vw;
-				padding: 2vw 0;
-			}
-			td {
-				text-align: center;
-				padding-left: 10px;
-				font-size: 4vw;
-			}
-			td:first-child {
-				padding-left: 0;
-			}	
-			td:last-child {
-				max-width: 100px;
-			}
-			body {
-				font-family: Arial;
-				background-color: #0c1769;
-				color: #FFF;
-				padding: 0 2vw;
-			}
-			input {
-				width: 100%;
-				height: 30px;
-			}
-		</style>
-	</head>
-	<body>
-	<table>
-		<thead>
-			<tr>
-				<!-- <th>Platnosť</th> -->
-				<th></th>
-				<th>Country</th>
-				<th>Currency</th>
-				<th>We sell</th>
-				<th>We buy</th>
-			</tr>
-		</thead>
-		<tbody id=tbody>
-		</tbody>
-	</table>
+<head>
+	<meta charset="utf-8">
+	<title>b</title>
+	<meta name="author" content="frantal.lukas10@gmail.com">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<style>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	html, body {
+		height: 100%;
+	}
+	body {
+		background-color: #000;
+		line-height: 1;
+	}
+	.main-content {
+		font-family: Arial;
+		font-weight: bold;
+		color: #FFF;
+		padding: 0 20px;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	tbody tr {
+		background-color: #141d7a;
+	}
+	tbody td:first-child {
+		padding: 0 15px 0 0;
+		line-height: 0;
+		width: 90px;
+	}
+	tr td:nth-child(3) {
+		width: 165px;
+	}
+	tr td:nth-child(2),
+	tr td:nth-child(3) {
+		text-transform: uppercase;
+	}
+	tr td:nth-child(4),
+	tr td:nth-child(5) {
+		background-color: #cb220f;
+		border: 5px solid #000;
+		border-width: 20px 10px;
+		font-size: 40px;
+	}
+	tr td:nth-child(5) {
+		border-right: 0;
+	}
+	th, td {
+		text-align: center;
+		vertical-align: middle;
+	}
+	th {
+		font-weight: bold;
+		font-size: 50px;
+		padding: 30px 20px 5px;
+	}
+	tr td:nth-child(2),
+	th:first-child {
+		text-align: left;
+	}
+	td {
+		padding: 15px 0;
+		font-size: 30px;
+		border: 5px solid #000;
+		border-width: 20px 0;
+	}
+</style>
+</head>
+<body>
+	<div class="main-content">
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2">Country</th>
+					<th>currency</th>
+					<th>We sell</th>
+					<th>We buy</th>
+				</tr>
+			</thead>
+			<tbody id=tbody>
+			</tbody>
+		</table>
+	</div>
 	<script type="text/javascript">
 		const selectELementTbody = document.getElementById("tbody")
 
-		let currentValueText = [] 
-    let newValueText = []
+		let currentArrayTr = [] 
+		let arrayTr = []
+		
+		let arrayTd = []
 
-	  setInterval(() => { 
-      let string = localStorage.getItem(0) 
-     	if (string !== null) { 
-        if (localStorage.length > 0) {
-          for(let i = 0; i < localStorage.length; i++) {
+		setInterval(() => {
+			let resetValue = localStorage.getItem(0)
 
-						newValueText[i] = localStorage.getItem(Number(i)) 
+			if(resetValue === "") {
+				location.reload()
+				localStorage.clear()
+				location.reload()
+			}
 
-						if(currentValueText[i] !== newValueText[i]) {
+			let arrayValue = localStorage.getItem(0)
+
+			if(arrayValue !== null || resetValue !== "") {
+				if(localStorage[0]) {
+
+					arrayTr = arrayValue.split('|')
+					for(let i = 0; i < arrayTr.length; i++) {
+						if(arrayTr.length < currentArrayTr.length) {
+								let actualMessage = localStorage.getItem(0)
+								location.reload()
+								localStorage.setItem(0, "")
+								localStorage.setItem(0, actualMessage)
+						}
+						else if(currentArrayTr[i] !== arrayTr[i]) {
+					 		currentArrayTr[i] = arrayTr[i]
 
 							const createElementTr = document.createElement("tr")
-							const setAttributeIdTr = createElementTr.setAttribute("id", i)
+							createElementTr.setAttribute("id", i)
 							selectELementTbody.appendChild(createElementTr)
-							currentValueText[i] = localStorage.getItem(Number(i))
-							const split = currentValueText[i].split(',')
 
-							for(let j = 0; j < split.length; j++) {
-								const createElementTd = document.createElement("td")
-								setAttributeIdTd = createElementTd.setAttribute("id", i + '-' + j)
-								textnode = document.createTextNode(split[j])
-								document.getElementById(i).appendChild(createElementTd).appendChild(textnode)
+							for(let j = 0; j < 5; j++) {
+
+								arrayTd[j] = arrayTr[i].split(',')[j]
+
+								if(j === 0) {
+									const createElementTd = document.createElement("td")
+									createElementTd.setAttribute("id", i + '-' + 0)
+									document.getElementById(i).appendChild(createElementTd).innerHTML = arrayTd[0]
+								}
+								else {
+									const createElementTd = document.createElement("td")
+									const textnode = document.createTextNode(arrayTd[j])
+									createElementTd.setAttribute("id", i + '-' + j)
+									document.getElementById(i).appendChild(createElementTd).appendChild(textnode)
+								}
 							}
-            }
-          }
-        }
-      }
-		}, 1000) 
+						}
+					}
+				}
+			}
+		}, 0)
 	</script>
 </body>
 </html>

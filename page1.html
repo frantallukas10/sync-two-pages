@@ -1,165 +1,406 @@
 <!doctype html>
 <html lang="sk">
-	<head>
-		<meta charset="utf-8">
-		<title>a</title>
-		<meta name="author" content="frantal.lukas10@gmail.com">
-		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<style>
-			html, body, div, span, applet, object, iframe,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-			a, abbr, acronym, address, big, cite, code,
-			del, dfn, em, img, ins, kbd, q, s, samp,
-			small, strike, strong, sub, sup, tt, var,
-			b, u, i, center,
-			dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend,
-			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed, 
-			figure, figcaption, footer, header, hgroup, 
-			menu, nav, output, ruby, section, summary,
-			time, mark, audio, video {
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-size: 100%;
-				font: inherit;
-				vertical-align: baseline;
-			}
-			/* HTML5 display-role reset for older browsers */
-			article, aside, details, figcaption, figure, 
-			footer, header, hgroup, menu, nav, section {
-				display: block;
-			}
-			body {
-				line-height: 1;
-			}
-			ol, ul {
-				list-style: none;
-			}
-			blockquote, q {
-				quotes: none;
-			}
-			blockquote:before, blockquote:after,
-			q:before, q:after {
-				content: "";
-				content: none;
-			}
-			table {
-				table-layout: fixed;
-				border-collapse: collapse;
-				border-spacing: 0;
-				width: 100%;
-			}
-			html, body, table {
-				height: 100%;
-			}
-			th {
-				text-align: center;
-				vertical-align: middle;
-				font-family: Arial, open-sans;
-				font-weight: bold;
-				color: #FFF;
-				font-size: 3vw;
-				padding: 1vw;
-			}
-			td {
-				padding-left: 10px;
-			}
-			td:first-child {
-				padding-left: 0;
-			}	
-			td:last-child {
-				max-width: 100px;
-			}
-			body {
-				font-family: Arial;
-				background-color: #0c1769;
-				color: #FFF;
-				padding: 0 2vw;
-			}
-			input {
-				width: 100%;
-				height: 30px;
-			}
-			#msg1,
-			#send {
-				width: 100%;
-				height: 36px;
-			}
-		</style>
-	</head>
-	<body>
-		<table class="holder-table">
-			<thead>
-				<tr>
-					<th>Vlajka</th>
-					<th>Krajina</th>
-					<th>Mena</th>
-					<th>Predaj</th>
-					<th>Kúpa</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody id=tbody>
-				<tr id="0">
-					<td>
-						<select id="msg1">
-							<option value="us">United States</option>
-							<option value="at">Austria</option>
-							<option value="es">Spain</option>
-							<option value="br">Brazil</option>
-							<option value="ca">Canada</option>
-							<option value="uy">Uruguay</option>
-							<option value="ar">Argentina</option>
-							<option value="de">Germany</option>
-							<option value="gb">United Kingdom</option>
-							<option value="fr">France</option>
-							<option value="vi">Dominican Republic &amp; Virgin Islands, US</option>
-						</select>
-					</td>
-					<td><input type="text" id="msg2" placeholder="krajina"></td>
-					<td><input type="text" id="msg3" placeholder="mena"></td>
-					<td><input type="text" id="msg4" placeholder="0.00000"></td>
-					<td><input type="text" id="msg5" placeholder="0.00000"></td>
-					<td><input type="submit" id="send" value="send"></td>
-				</tr>
-			</tbody>
-		</table>	
+<head>
+	<meta charset="utf-8">
+	<title>a</title>
+	<meta name="author" content="frantal.lukas10@gmail.com">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<style>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after, 
+	q:before, q:after {
+		content: "";
+		content: none;
+	}
+	html, body {
+		height: 100%;
+	}
+	body {
+		background-color: #000;
+		line-height: 1;
+	}
+	.main-content {
+		font-family: Arial;
+		font-weight: bold;
+		color: #FFF;
+		padding: 10px;
+	}
+	.holder-table {
+		table-layout: fixed;
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	.holder-table tr {
+		padding-bottom: 10px;
+	}
+	.holder-table td, th {
+		text-align: center;
+		vertical-align: middle;
+		font-size: 24px;
+		padding: 0 0 10px 10px;
+	}
+	.holder-table th:first-child, 
+	.holder-table td:first-child {
+		padding-left: 0;
+	}
+	.holder-table {
+		table-layout: fixed;
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	.select, .input, .btn {
+		font-weight: bold;
+		text-align: center;
+		width: 100%;
+		height: 30px;
+	}
+	.select, .btn {
+		height: 36px;
+	}
+	.select {
+		padding-left: 50px;
+	}
+	.option {
+		font-family: Arial;
+		font-weight: bold;
+	}
+	.holder-table-output {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	.holder-table-output tbody tr {
+		background-color: #141d7a;
+	}
+	.holder-table-output tbody td:first-child {
+		padding: 0 15px 0 0;
+		line-height: 0;
+		width: 90px;
+	}
+	.holder-table-output tr td:nth-child(3) {
+		width: 165px;
+	}
+	.holder-table-output tr td:nth-child(2),
+	.holder-table-output tr td:nth-child(3) {
+		text-transform: uppercase;
+	}
+	.holder-table-output tr td:nth-child(4),
+	.holder-table-output tr td:nth-child(5) {
+		background-color: #cb220f;
+		border: 5px solid #000;
+		border-width: 20px 10px;
+	}
+	.holder-table-output tr td:nth-child(5) {
+		border-right: 0;
+	}
+	.holder-table-output th, td {
+		text-align: center;
+		vertical-align: middle;
+	}
+	.holder-table-output th {
+		font-weight: bold;
+		padding: 15px 20px 0;
+	}
+	.holder-table-output tr td:nth-child(2),
+	.holder-table-output th:first-child {
+		text-align: left;
+	}
+	.holder-table-output td {
+		padding: 15px 0;
+		font-size: 30px;
+		border: 5px solid #000;
+		border-width: 20px 0;
+	}
+	.holder-table-output tbody td:nth-child(6) {
+		padding: 15px;
+	}
+</style>
+</head>
+<body>
+	<div class="main-content">
+		<div class="first-table">
+			<table class="holder-table">
+				<thead>
+					<tr>
+						<th>currency</th>
+						<th>We sell</th>
+						<th>We buy</th>
+						<th><input type="submit" id="reset" class="btn" value="Reštart"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<select id="msg3" class="select">
+								<option value="CZK" class="option" id="option">CZK</option>
+								<option value="GBP" class="option" id="option">GBP</option>
+								<option value="HUF" class="option" id="option">HUF</option>
+								<option value="CHF" class="option" id="option">CHF</option>
+								<option value="PLN" class="option" id="option">PLN</option>
+								<option value="USD" class="option" id="option">USD</option>
+							</select>
+						</td>
+						<td><input type="text" id="msg4" class="input" placeholder="0.00000"></td>
+						<td><input type="text" id="msg5" class="input" placeholder="0.00000"></td>
+						<td><input type="submit" id="send" class="btn" value="Poslať"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="second-table">
+			<table class="holder-table-output">
+				<thead>
+					<tr>
+						<th colspan="2">Country</th>
+						<th>currency</th>
+						<th>We sell</th>
+						<th>We buy</th>
+					</tr>
+				</thead>
+				<tbody id=tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
 	<script>
-		let i = 0
 		document.getElementById("send").addEventListener("click", function(e) {
 			// create actual date
-			const currentTime = new Date()
-			const day = currentTime.getDate()
-			const month = currentTime.getMonth() + 1
-			const year = currentTime.getFullYear()
-			const actualDate = `${day}.${month}.${year}`
+			// const currentTime = new Date()
+			// const day = currentTime.getDate()
+			// const month = currentTime.getMonth() + 1
+			// const year = currentTime.getFullYear()
+			// const actualDate = `${day}.${month}.${year}`
 
-			const msg1 = document.getElementById("msg1").value
-			const msg2 = document.getElementById("msg2").value
 			const msg3 = document.getElementById("msg3").value
-			const msg4 = document.getElementById("msg4").value
-			const msg5 = document.getElementById("msg5").value
+			let msg1
+			let msg2
+			switch (msg3) {
+				case "CZK":
+				msg1 = `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <defs>
+					    <clipPath id="a">
+					      <path fill-opacity=".67" d="M-74 0h682.67v512H-74z"/>
+					    </clipPath>
+					  </defs>
+					  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(69.38) scale(.94)" stroke-width="1pt">
+					    <path fill="#e80000" d="M-74 0h768v512H-74z"/>
+					    <path fill="#fff" d="M-74 0h768v256H-74z"/>
+					    <path d="M-74 0l382.73 255.67L-74 511.01V0z" fill="#00006f"/>
+					  </g>
+					</svg>
+				`
+				msg2 = "Czech Republic"
+				break
+				case "GBP":
+				msg1 = `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <defs>
+					    <clipPath id="a">
+					      <path fill-opacity=".67" d="M-85.333 0h682.67v512h-682.67z"/>
+					    </clipPath>
+					  </defs>
+					  <g clip-path="url(#a)" transform="translate(80) scale(.94)">
+					    <g stroke-width="1pt">
+					      <path fill="#006" d="M-256 0H768.02v512.01H-256z"/>
+					      <path d="M-256 0v57.244l909.535 454.768H768.02V454.77L-141.515 0H-256zM768.02 0v57.243L-141.515 512.01H-256v-57.243L653.535 0H768.02z" fill="#fff"/>
+					      <path d="M170.675 0v512.01h170.67V0h-170.67zM-256 170.67v170.67H768.02V170.67H-256z" fill="#fff"/>
+					      <path d="M-256 204.804v102.402H768.02V204.804H-256zM204.81 0v512.01h102.4V0h-102.4zM-256 512.01L85.34 341.34h76.324l-341.34 170.67H-256zM-256 0L85.34 170.67H9.016L-256 38.164V0zm606.356 170.67L691.696 0h76.324L426.68 170.67h-76.324zM768.02 512.01L426.68 341.34h76.324L768.02 473.848v38.162z" fill="#c00"/>
+					    </g>
+					  </g>
+					</svg>
+				`
+				msg2 = "United Kingdom"
+				break
+				case "HUF":
+				msg1 = `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <g fill-rule="evenodd">
+					    <path fill="#fff" d="M640.006 479.994H0V0h640.006z"/>
+					    <path fill="#388d00" d="M640.006 479.994H0V319.996h640.006z"/>
+					    <path fill="#d43516" d="M640.006 160.127H0V.13h640.006z"/>
+					  </g>
+					</svg>
+				`
+				msg2 = "Hungary"
+				break
+				case "CHF":
+				msg1 = `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <g fill-rule="evenodd" stroke-width="1pt">
+					    <path fill="#d52b1e" d="M0 0h640v480H0z"/>
+					    <g fill="#fff">
+					      <path d="M170 194.997h299.996v89.997H170z"/>
+					      <path d="M275 89.997h89.996v299.996H275z"/>
+					    </g>
+					  </g>
+					</svg>
+				`
+				msg2 = "Switzerland"
+				break
+				case "PLN":
+				msg1 =  `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <g fill-rule="evenodd">
+					    <path fill="#fff" d="M640 480H0V0h640z"/>
+					    <path fill="#dc143c" d="M640 480H0V240h640z"/>
+					  </g>
+					</svg>
+				`
+				msg2 = "Poland"
+				break
+				case "USD":
+				msg1 = `
+					<svg xmlns="http://www.w3.org/2000/svg" height="70" width="90" viewBox="0 0 640 480">
+					  <g fill-rule="evenodd" transform="scale(.9375)">
+					    <g stroke-width="1pt">
+					      <path d="M0 0h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0z" fill="#bd3d44"/>
+					      <path d="M0 39.385h972.81V78.77H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0zm0 78.77h972.81v39.385H0z" fill="#fff"/>
+					    </g>
+					    <path fill="#192f5d" d="M0 0h389.12v275.69H0z"/>
+					    <g fill="#fff">
+					      <path d="M32.427 11.8l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.853 0l3.541 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735H93.74zm64.856 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.269 6.734 3.54-10.896-9.269-6.735h11.458zm64.852 0l3.54 10.896h11.457l-9.269 6.735 3.54 10.896-9.268-6.734-9.27 6.734 3.541-10.896-9.27-6.735h11.458zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.27 6.734 3.542-10.896-9.27-6.735h11.458zM64.855 39.37l3.54 10.896h11.458L70.583 57l3.542 10.897-9.27-6.734-9.269 6.734L59.126 57l-9.269-6.734h11.458zm64.852 0l3.54 10.896h11.457L135.435 57l3.54 10.897-9.268-6.734-9.27 6.734L123.978 57l-9.27-6.734h11.458zm64.855 0l3.54 10.896h11.458L200.29 57l3.541 10.897-9.27-6.734-9.268 6.734L188.833 57l-9.269-6.734h11.457zm64.855 0l3.54 10.896h11.458L265.145 57l3.541 10.897-9.269-6.734-9.27 6.734L253.69 57l-9.27-6.734h11.458zm64.852 0l3.54 10.896h11.457L329.997 57l3.54 10.897-9.268-6.734-9.27 6.734L318.54 57l-9.27-6.734h11.458zM32.427 66.939l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.853 0l3.541 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735H93.74zm64.856 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.269 6.734 3.54-10.896-9.269-6.735h11.458zm64.852 0l3.54 10.896h11.457l-9.269 6.735 3.54 10.896-9.268-6.734-9.27 6.734 3.541-10.896-9.27-6.735h11.458zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.27 6.734 3.542-10.896-9.27-6.735h11.458zM64.855 94.508l3.54 10.897h11.458l-9.27 6.734 3.542 10.897-9.27-6.734-9.269 6.734 3.54-10.897-9.269-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.27-6.734-9.268 6.734 3.54-10.897-9.269-6.734h11.457zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.269-6.734-9.27 6.734 3.542-10.897-9.27-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458zM32.427 122.078l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.853 0l3.541 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735H93.74zm64.856 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.269 6.734 3.54-10.896-9.269-6.735h11.458zm64.852 0l3.54 10.896h11.457l-9.269 6.735 3.54 10.896-9.268-6.734-9.27 6.734 3.541-10.896-9.27-6.735h11.458zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.27 6.734 3.542-10.896-9.27-6.735h11.458zM64.855 149.647l3.54 10.897h11.458l-9.27 6.734 3.542 10.897-9.27-6.734-9.269 6.734 3.54-10.897-9.269-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.27-6.734-9.268 6.734 3.54-10.897-9.269-6.734h11.457zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.269-6.734-9.27 6.734 3.542-10.897-9.27-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458z"/>
+					      <g>
+					        <path d="M32.427 177.217l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.853 0l3.541 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735H93.74zm64.856 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.269 6.734 3.54-10.896-9.269-6.735h11.458zm64.852 0l3.54 10.896h11.457l-9.269 6.735 3.54 10.896-9.268-6.734-9.27 6.734 3.541-10.896-9.27-6.735h11.458zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.27 6.734 3.542-10.896-9.27-6.735h11.458zM64.855 204.786l3.54 10.897h11.458l-9.27 6.734 3.542 10.897-9.27-6.734-9.269 6.734 3.54-10.897-9.269-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.27-6.734-9.268 6.734 3.54-10.897-9.269-6.734h11.457zm64.855 0l3.54 10.897h11.458l-9.27 6.734 3.541 10.897-9.269-6.734-9.27 6.734 3.542-10.897-9.27-6.734h11.458zm64.852 0l3.54 10.897h11.457l-9.269 6.734 3.54 10.897-9.268-6.734-9.27 6.734 3.541-10.897-9.27-6.734h11.458z"/>
+					      </g>
+					      <g>
+					        <path d="M32.427 232.356l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.853 0l3.541 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735H93.74zm64.856 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.269 6.734 3.54-10.896-9.269-6.735h11.458zm64.852 0l3.54 10.896h11.457l-9.269 6.735 3.54 10.896-9.268-6.734-9.27 6.734 3.541-10.896-9.27-6.735h11.458zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.27-6.734-9.268 6.734 3.54-10.896-9.269-6.735h11.457zm64.855 0l3.54 10.896h11.458l-9.27 6.735 3.541 10.896-9.269-6.734-9.27 6.734 3.542-10.896-9.27-6.735h11.458z"/>
+					      </g>
+					    </g>
+					  </g>
+					</svg>
+				`
+				msg2 = "United States of America"
+			}
+		  const msg4 = document.getElementById("msg4").value
+		  const msg5 = document.getElementById("msg5").value
+		  const actualMessage = [msg1,msg2,msg3,msg4,msg5]
 
-			const actualMessage = [msg1,msg2,msg3,msg4,msg5]
-			localStorage.setItem(
-				i++, actualMessage
-			)
-			const createElementTr = document.createElement("tr")
-			const setAttributeIdTr = createElementTr.setAttribute("id", i)
-			const selectELementTbody = document.getElementById("tbody")
-			selectELementTbody.appendChild(createElementTr)
-			const createElementTd = document.createElement("td")
+		  if(localStorage.getItem(0) !== null) {
+		  	const currnetMessage = localStorage.getItem(localStorage.key(0))
+		  	localStorage.setItem(0, [currnetMessage + '|' + actualMessage])
+		  }
+		  else {
+		  	localStorage.setItem(0, actualMessage)
+		  }
+		})
 
+		function remove(tr) {
+			let newArrayTr = []
+			let actualMessage = localStorage.getItem(0)
+			newArrayTr = actualMessage.split('|')
 
+			if(tr != -1) {
+				newArrayTr.splice(tr, 1)
+			}
+			actualMessage = newArrayTr.join('|')
+			location.reload()
+			localStorage.setItem(0, "")
+			localStorage.setItem(0, actualMessage)
+		}
+
+		const selectELementTbody = document.getElementById("tbody")
+		let currentArrayTr = [] 
+		let arrayTr = []
+		
+		let arrayTd = []
+
+		setInterval(() => {
+			let resetValue = localStorage.getItem(1)
+
+			if(resetValue === "") {
+				localStorage.clear()
+				location.reload()
+				return
+			}
+
+			let arrayValue = localStorage.getItem(0)
+
+			if(arrayValue !== null || resetValue !== "") {
+				if(localStorage[0]) {
+
+					arrayTr = arrayValue.split('|')
+
+					for(let i = 0; i < arrayTr.length; i++) {
+
+						if(currentArrayTr[i] !== arrayTr[i]) {
+
+					 		currentArrayTr[i] = arrayTr[i]
+
+							const createElementTr = document.createElement("tr")
+							createElementTr.setAttribute("id", i)
+							selectELementTbody.appendChild(createElementTr)
+
+							for(let j = 0; j < 6; j++) {
+
+								arrayTd[j] = arrayTr[i].split(',')[j]
+
+								if(j === 0) {
+									const createElementTd = document.createElement("td")
+									createElementTd.setAttribute("id", i + '-' + 0)
+									document.getElementById(i).appendChild(createElementTd).innerHTML = arrayTd[0]
+								}
+								else if(j === 5) {
+									const createElementTd = document.createElement("td")
+									createElementTd.setAttribute("id", i + '-' + 5)
+									document.getElementById(i).appendChild(createElementTd).innerHTML = `
+										<input type="submit" id="${i}" class="btn" value="Vymazať">
+									`;
+									document.getElementById(i + '').addEventListener("click", function(e) {
+										remove(i)
+										return
+									})
+								}
+								else {
+									const createElementTd = document.createElement("td")
+									const textnode = document.createTextNode(arrayTd[j])
+									createElementTd.setAttribute("id", i + '-' + j)
+									document.getElementById(i).appendChild(createElementTd).appendChild(textnode)
+								}
+							}
+						}
+					}
+				}
+			}
+		}, 0)
+
+		document.getElementById("reset").addEventListener("click", function(e) {
+			localStorage.clear()
+			location.reload()
+			localStorage.setItem(0, "")
 		})
 	</script>
 </body>
 </html>
-<!-- npm install http-server -g  -->
-<!-- http-server .-->
-<!-- https://www.npmjs.com/package/http-server -->
-<!-- http://localhost:8080/page2.html -->
-<!-- http://localhost:8080/page1.html -->
