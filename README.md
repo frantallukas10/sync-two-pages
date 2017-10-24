@@ -17,6 +17,6 @@ open this url in browsers</br>
 http://localhost:8080/page2.html.</br>
 http://localhost:8080/page1.html.</br>
 
-## License
+## License:
 
 MIT, see `LICENSE.md` for more information.
